@@ -1,0 +1,1 @@
+npx sequelize-cli model:generate --name Usuario --attributes nomeDeUsuario:STRING,fotoDePerfil:STRING,dataDeNascimento:DATE,idGenero:INTEGER,biografia:STRING
