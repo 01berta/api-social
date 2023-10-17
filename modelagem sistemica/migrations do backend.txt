@@ -1,17 +1,17 @@
-npx sequelize-cli model:generate --name Usuario --attributes nomeDeUsuario:STRING,fotoDePerfil:STRING,dataDeNascimento:DATE,idGenero:INTEGER,biografia:STRING
+npx sequelize-cli model:generate --name Usuario --attributes nomeDeUsuario:STRING,fotoDePerfil:STRING,dataDeNascimento:DATE,biografia:STRING
 
-npx sequelize-cli model:generate --name Publicacao_Post --attributes idPublicacao:INTEGER,textoConteudo:STRING,dataDePublicacao:DATE,idUsuario:INTEGER,idCurtidas:INTEGER,idComentarios:INTEGER,idCompartilhamentos:INTEGER,idHashtags:INTEGER
+npx sequelize-cli model:generate --name Comentario --attributes Texto_Conteudo_do_Comentario:STRING,dataDoComentario:DATE
 
-npx sequelize-cli model:generate --name Evento --attributes idEvento:INTEGER,nomeDoEvento:STRING,descricao:STRING,dataehora:DATE,localizacao:STRING,idCriador:INTEGER,idParticipantes:INTEGER
+npx sequelize-cli model:generate --name Publicacao_Post --attributes textoConteudo:STRING,dataDePublicacao:DATE,idUsuario:INTEGER,idCurtidas:INTEGER,idComentarios:INTEGER,idCompartilhamentos:INTEGER,idHashtags:INTEGER
 
-npx sequelize-cli model:generate --name Evento --attributes Hashtags textoDaHastags:STRING,publicacoesRelacionadas:STRING,idHashtags:INTEGER
+npx sequelize-cli model:generate --name Evento --attributes nomeDoEvento:STRING,descricao:STRING,dataehora:DATE,localizacao:STRING,idCriador:INTEGER,idParticipantes:INTEGER
 
-npx sequelize-cli model:generate --name Evento --attributes Configuracoes_de_Privacidade idPrivacidade:INTEGER,visibilidadeDoPerfil:STRING,publicacoes:INTEGER,informacoesPessoais:STRING
+npx sequelize-cli model:generate --name Hashtags --attributes textoDaHastags:STRING,publicacoesRelacionadas:STRING,idHashtags:INTEGER
 
-npx sequelize-cli model:generate --name Evento --attributes AmizadeSeguindo idConexao:STRING,idSeguidor:STRING,idSeguido:STRING,dataDeincio:DATE
+npx sequelize-cli model:generate --name Configuracoes_de_Privacidade  --attributes visibilidadeDoPerfil:STRING,publicacoes:INTEGER,informacoesPessoais:STRING
 
-npx sequelize-cli model:generate --name Evento --attributes Notificacoes idNotificacoes:INTEGER,tipoDaNotificacoes:STRING,remetente:STRING,destinario:STRING,dataDaNotificacao:STRING,idComentario:STRING
+npx sequelize-cli model:generate --name AmizadeSeguindo --attributes idSeguidor:INTEGER,idSeguido:INTEGER,dataDeincio:DATE
 
-npx sequelize-cli model:generate --name Evento --attributes Comentario idComentario:INTEGER,Texto_Conteudo_do_Comentario:STRING,dataDoComentario:DATE,idRespostasComentarios:INTEGER
+npx sequelize-cli model:generate --name Notificacoes --attributes tipoDaNotificacoes:STRING,remetente:STRING,destinario:STRING,dataDaNotificacao:STRING,idComentario:INTEGER
 
-npx sequelize-cli model:generate --name Evento --attributes RespostasComentario idRespostasComentario:INTEGER,idComentario:INTEGER,textoDaResposta:STRING
+npx sequelize-cli model:generate --name RespostasComentario --attributes idComentario:INTEGER,textoDaResposta:STRING
