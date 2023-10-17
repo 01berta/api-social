@@ -23,7 +23,7 @@ Siga os passos abaixo para configurar o ambiente de desenvolvimento do backend.
 
 
 ```bash
-git clone https://github.com/VilarimLucas/expenseControlApp.git
+git clone https://github.com/01berta/api-social.git
 ```
 ### 2.1 Configure o Backend NODE + EXPRESS
 ```powershell
