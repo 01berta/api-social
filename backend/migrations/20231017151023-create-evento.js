@@ -2,21 +2,30 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Comentarios', {
+    await queryInterface.createTable('Eventos', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      idComentario: {
-        type: Sequelize.INTEGER
-      },
-      Texto_Conteudo_do_Comentario: {
+      nomeDoEvento: {
         type: Sequelize.STRING
       },
-      dataDoComentario: {
+      descricao: {
+        type: Sequelize.STRING
+      },
+      dataehora: {
         type: Sequelize.DATE
+      },
+      localizacao: {
+        type: Sequelize.STRING
+      },
+      idCriador: {
+        type: Sequelize.INTEGER
+      },
+      idParticipantes: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -29,6 +38,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Comentarios');
+    await queryInterface.dropTable('Eventos');
   }
 };

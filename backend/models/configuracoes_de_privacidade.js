@@ -14,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Configuracoes_de_Privacidade.init({
-    idPrivacidade: DataTypes.INTEGER,
     visibilidadeDoPerfil: DataTypes.STRING,
     publicacoes: DataTypes.INTEGER,
     informacoesPessoais: DataTypes.STRING

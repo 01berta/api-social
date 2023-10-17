@@ -2,37 +2,30 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Eventos', {
+    await queryInterface.createTable('Notificacoes', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-
-      nomeDoEvento: {
+      tipoDaNotificacoes: {
         type: Sequelize.STRING
       },
-      descricao: {
+      remetente: {
         type: Sequelize.STRING
       },
-      dataehora: {
+      destinario: {
+        type: Sequelize.STRING
+      },
+      dataDaNotificacao: {
         type: Sequelize.DATE
       },
-      localizacao: {
-        type: Sequelize.STRING
+      idComentario: {
+        type: Sequelize.INTEGER
       },
-      idCriador: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: { model: 'Usuarios', key: 'id'},
-        onDelete: 'CASCADE'
-      },
-      idParticipantes: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: { model: 'Usuarios', key: 'id'},
-        onDelete: 'CASCADE'
+      idUsuario: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -45,6 +38,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Eventos');
+    await queryInterface.dropTable('Notificacoes');
   }
 };

@@ -2,30 +2,21 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Notificacoes', {
+    await queryInterface.createTable('AmizadeSeguindos', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      idNotificacoes: {
+      idSeguidor: {
         type: Sequelize.INTEGER
       },
-      tipoDaNotificacoes: {
-        type: Sequelize.STRING
+      idSeguido: {
+        type: Sequelize.INTEGER
       },
-      remetente: {
-        type: Sequelize.STRING
-      },
-      destinario: {
-        type: Sequelize.STRING
-      },
-      dataDaNotificacao: {
-        type: Sequelize.STRING
-      },
-      idComentario: {
-        type: Sequelize.STRING
+      dataDeincio: {
+        type: Sequelize.DATE
       },
       createdAt: {
         allowNull: false,
@@ -38,6 +29,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Notificacoes');
+    await queryInterface.dropTable('AmizadeSeguindos');
   }
 };

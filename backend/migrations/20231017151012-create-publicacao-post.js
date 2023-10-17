@@ -2,24 +2,33 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Configuracoes_de_Privacidades', {
+    await queryInterface.createTable('Publicacao_Posts', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      idPrivacidade: {
-        type: Sequelize.INTEGER
-      },
-      visibilidadeDoPerfil: {
+      textoConteudo: {
         type: Sequelize.STRING
       },
-      publicacoes: {
+      dataDePublicacao: {
+        type: Sequelize.DATE
+      },
+      idUsuario: {
         type: Sequelize.INTEGER
       },
-      informacoesPessoais: {
-        type: Sequelize.STRING
+      idCurtidas: {
+        type: Sequelize.INTEGER
+      },
+      idComentarios: {
+        type: Sequelize.INTEGER
+      },
+      idCompartilhamentos: {
+        type: Sequelize.INTEGER
+      },
+      idHashtags: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -32,6 +41,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Configuracoes_de_Privacidades');
+    await queryInterface.dropTable('Publicacao_Posts');
   }
 };

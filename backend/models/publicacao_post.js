@@ -14,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Publicacao_Post.init({
-    idPublicacao: DataTypes.INTEGER,
     textoConteudo: DataTypes.STRING,
     dataDePublicacao: DataTypes.DATE,
     idUsuario: DataTypes.INTEGER,

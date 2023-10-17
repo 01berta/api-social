@@ -2,21 +2,21 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Hashtags', {
+    await queryInterface.createTable('Configuracoes_de_Privacidades', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      textoDaHastags: {
+      visibilidadeDoPerfil: {
         type: Sequelize.STRING
       },
-      publicacoesRelacionadas: {
-        type: Sequelize.STRING
-      },
-      idHashtags: {
+      publicacoes: {
         type: Sequelize.INTEGER
+      },
+      informacoesPessoais: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -29,6 +29,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Hashtags');
+    await queryInterface.dropTable('Configuracoes_de_Privacidades');
   }
 };

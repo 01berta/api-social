@@ -14,12 +14,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Notificacoes.init({
-    idNotificacoes: DataTypes.INTEGER,
     tipoDaNotificacoes: DataTypes.STRING,
     remetente: DataTypes.STRING,
     destinario: DataTypes.STRING,
-    dataDaNotificacao: DataTypes.STRING,
-    idComentario: DataTypes.STRING
+    dataDaNotificacao: DataTypes.DATE,
+    idComentario: DataTypes.INTEGER,
+    idUsuario: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Notificacoes',

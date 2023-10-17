@@ -2,26 +2,17 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('AmizadeSeguindos', {
+    await queryInterface.createTable('Comentarios', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      idSeguidor: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {model: 'Usuarios', key: 'id'},
-        onDelete: 'CASCADE'
+      Texto_Conteudo_do_Comentario: {
+        type: Sequelize.STRING
       },
-      idSeguido: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {model: 'Usuarios', key: 'id'},
-        onDelete: 'CASCADE'
-      },
-      dataDeincio: {
+      dataDoComentario: {
         type: Sequelize.DATE
       },
       createdAt: {
@@ -35,6 +26,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('AmizadeSeguindos');
+    await queryInterface.dropTable('Comentarios');
   }
 };

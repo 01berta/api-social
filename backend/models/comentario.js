@@ -14,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Comentario.init({
-    idComentario: DataTypes.INTEGER,
     Texto_Conteudo_do_Comentario: DataTypes.STRING,
     dataDoComentario: DataTypes.DATE
   }, {

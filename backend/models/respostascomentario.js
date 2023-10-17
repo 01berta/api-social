@@ -14,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   RespostasComentario.init({
-    idRespostasComentario: DataTypes.INTEGER,
     idComentario: DataTypes.INTEGER,
     textoDaResposta: DataTypes.STRING
   }, {

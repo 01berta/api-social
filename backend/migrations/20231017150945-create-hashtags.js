@@ -2,26 +2,14 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Usuarios', {
+    await queryInterface.createTable('Hashtags', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nomeDeUsuario: {
-        type: Sequelize.STRING
-      },
-      fotoDePerfil: {
-        type: Sequelize.STRING
-      },
-      dataDeNascimento: {
-        type: Sequelize.DATE
-      },
-      idGenero: {
-        type: Sequelize.INTEGER
-      },
-      biografia: {
+      textoDaHastags: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -35,6 +23,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Usuarios');
+    await queryInterface.dropTable('Hashtags');
   }
 };
