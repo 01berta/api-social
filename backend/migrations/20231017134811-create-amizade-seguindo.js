@@ -9,14 +9,17 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      idConexao: {
-        type: Sequelize.STRING
-      },
       idSeguidor: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {model: 'Usuarios', key: 'id'},
+        onDelete: 'CASCADE'
       },
       idSeguido: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {model: 'Usuarios', key: 'id'},
+        onDelete: 'CASCADE'
       },
       dataDeincio: {
         type: Sequelize.DATE

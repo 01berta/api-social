@@ -14,9 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   AmizadeSeguindo.init({
-    idConexao: DataTypes.STRING,
-    idSeguidor: DataTypes.STRING,
-    idSeguido: DataTypes.STRING,
+    idSeguidor: DataTypes.INTEGER,
+    idSeguido: DataTypes.INTEGER,
     dataDeincio: DataTypes.DATE
   }, {
     sequelize,
