@@ -16,19 +16,16 @@ module.exports = {
         type: Sequelize.DATE
       },
       idUsuario: {
-        type: Sequelize.INTEGER
-      },
-      idCurtidas: {
-        type: Sequelize.INTEGER
-      },
-      idComentarios: {
-        type: Sequelize.INTEGER
-      },
-      idCompartilhamentos: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Usuarios', key: 'id'},
+        onDelete: 'CASCADE'
       },
       idHashtags: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Hashtags', key: 'id'},
+        onDelete: 'CASCADE'
       },
       createdAt: {
         allowNull: false,

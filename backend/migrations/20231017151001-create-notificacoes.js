@@ -22,10 +22,16 @@ module.exports = {
         type: Sequelize.DATE
       },
       idComentario: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Comentarios', key: 'id'},
+        onDelete: 'CASCADE'
       },
       idUsuario: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Usuarios', key: 'id'},
+        onDelete: 'CASCADE'
       },
       createdAt: {
         allowNull: false,

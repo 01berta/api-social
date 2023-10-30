@@ -10,10 +10,16 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       idSeguidor: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Usuarios', key: 'id'},
+        onDelete: 'CASCADE'
       },
       idSeguido: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Usuarios', key: 'id'},
+        onDelete: 'CASCADE'
       },
       dataDeincio: {
         type: Sequelize.DATE
