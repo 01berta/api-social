@@ -10,7 +10,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       idComentario: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Comentarios', key: 'id'},
+        onDelete: 'CASCADE'
       },
       textoDaResposta: {
         type: Sequelize.STRING

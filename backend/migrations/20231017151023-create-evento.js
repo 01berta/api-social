@@ -22,10 +22,16 @@ module.exports = {
         type: Sequelize.STRING
       },
       idCriador: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Usuarios', key: 'id'},
+        onDelete: 'CASCADE'
       },
       idParticipantes: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Usuarios', key: 'id'},
+        onDelete: 'CASCADE'
       },
       createdAt: {
         allowNull: false,
