@@ -4,9 +4,13 @@ const router = express.Router();
 const Comentario = require('../models').Comentario;
 
 //Cadastra Comentarios (POST)
-router.post('/', async (req, res) => {
-    const { descricao } = req.body;
-    const newEdit = await Comentario.create({ descricao })
-    res.status(200).json({ message: 'Cadastrado com sucesso' });
+router.post('/add', async (req, res) => {
+    try {
+        const { Texto_Conteudo_do_Comentario, dataDoComentario } = req.body;
+        const com = await Comentario.create({ Texto_Conteudo_do_Comentario, dataDoComentario })
+        res.status(200).json({ message: 'Cadastrado com sucesso', com });
+    } catch (error) {
+        res.status(500).json({ message: "error ao cadastrar", error });
+    }
 });
-module.exports=router;
+module.exports = router;
