@@ -13,4 +13,10 @@ router.post('/add', async (req, res) => {
         res.status(500).json({ message: "error ao cadastrar", error });
     }
 });
+
+//Busca Comentario (GET)
+router.get('/all', async (req, res) => {
+const comentarios = await Comentario.findAll();
+res.status(200).json(comentarios);
+});
 module.exports = router;
