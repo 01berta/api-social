@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      textoDaHastags: {
+      textoDaHashtags: {
         type: Sequelize.STRING
       },
       createdAt: {

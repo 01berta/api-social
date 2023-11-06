@@ -19,4 +19,24 @@ router.get('/all', async (req, res) => {
 const comentarios = await Comentario.findAll();
 res.status(200).json(comentarios);
 });
+//Altera Comentario por ID (PUT)
+router.put('/:id', async (req, res) =>{
+    const {Texto_Conteudo_do_Comentario, dataDoComentario} = req.body;
+    await Comentario.update(
+        {Texto_Conteudo_do_Comentario, dataDoComentario},
+        {
+            where: {id:req.params.id},
+        }
+    );
+    res.status(200).json({message: 'Atulizado com sucesso'});
+});
+//deletar o comentario
+router.delete('/:id', async (req, res) =>{
+    await Comentario.destroy({
+        where:{
+            id: req.params.id,
+        },
+    });
+    res.status(200).json({message:'Excluido com sucesso'})
+});
 module.exports = router;
