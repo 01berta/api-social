@@ -4,7 +4,7 @@ const router = express.Router();
 const Usuario = require('../models').Usuario;
 
 //Cadastra Usuario (POST)
-router.post('/', async (req, res) => {
+router.post('/add', async (req, res) => {
     try {
         const { nomeDeUsuario, fotoDePerfil, dataDeNascimento, biografia} = req.body;
         const com = await Usuario.create({ nomeDeUsuario, fotoDePerfil, dataDeNascimento, biografia })
