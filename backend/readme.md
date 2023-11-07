@@ -30,15 +30,18 @@ git clone https://github.com/01berta/api-social.git
 
 cd expenseControlApp/backend/src
 
-npm install express --save
-npm install -g nodemon
-npm install --save sequelize
-npm install --save body-parser
-npm install --save mysql2
-npm install --save-dev sequelize-cli
-npm install dotenv
-npm install cors -i
+npm install 
 
 npx sequelize db:create
 npx sequelize db:migrate
+```
+
+### 2.2 VIEWS
+
+abaixo estão as views necessarias para o banco de dados referenciando a amizade ligado ao seguidor
+
+```sql
+CREATE VIEW amizade_seguido AS
+select a.id, a.idSeguidor, a.idSeguido, u.nomeDeUsuario, u.fotoDePerfil, u.dataDeNascimento, u.biografia from amizadeseguindos as a 
+inner join usuarios as u on a.idSeguido = u.id;
 ```
