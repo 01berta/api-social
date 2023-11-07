@@ -13,6 +13,7 @@ router.post('/add', async (req, res) => {
         res.status(500).json({ message: "error ao cadastrar", error });
     }
 });
+
 //Busca Usuario (GET)
 router.get('/all', async (req, res) => {
 const usuarios = await Usuario.findAll();
