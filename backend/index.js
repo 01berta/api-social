@@ -8,9 +8,12 @@ const port = 3000;
 //configuracoes de controles
 const comentario = require('./controllers/comentarioController.js');
 const usuario = require('./controllers/usuarioController.js');
+const hashtagpost = require('./controllers/hashtagsController.js');
 
 app.use(bodyParser.json());
-app.use(cors())
-app.use('/comentario', comentario)
-app.use('/usuario', usuario)
-app.listen(port, () => console.log(`Servidor rodando porta ${port}!`))
+app.use(cors());
+app.use('/comentario', comentario);
+app.use('/usuario', usuario);
+app.use('/hashtags', hashtagpost);
+
+app.listen(port, () => console.log(`Servidor rodando porta ${port}!`));
