@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Hashtags.init({
-    textoDaHastags: DataTypes.STRING
+    textoDaHashtags: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Hashtags',
